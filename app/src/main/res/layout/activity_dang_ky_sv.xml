@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/anh3"
+    tools:context=".DangKySV">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/anh2"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ĐĂNG KÝ SV"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:textSize="30dp"
+        android:textColor="#E96B0B"
+        android:textStyle="bold"
+        />
+    <EditText
+        android:id="@+id/et_TenDangKySV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tên Đăng Nhập"
+        android:layout_marginTop="20dp"
+        android:padding="10dp"
+        />
+    <EditText
+        android:id="@+id/et_MatKhauSV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Mật Khẩu"
+        android:layout_marginTop="20dp"
+        android:padding="10dp"
+        android:inputType="textPassword"
+        />
+    <EditText
+        android:id="@+id/et_NhapLaiMatKhauSV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nhập Lại Mật Khẩu"
+        android:layout_marginTop="20dp"
+        android:padding="10dp"
+        android:inputType="textPassword"
+        />
+    <Button
+        android:id="@+id/btn_dang_ky_Sv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Đăng Ký"
+        android:layout_marginTop="20dp"
+        android:textColor="#FFFFFF"
+        android:textSize="18dp" />
+</LinearLayout>

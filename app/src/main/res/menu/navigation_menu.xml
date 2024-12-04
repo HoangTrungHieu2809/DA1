@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/menu_item1"
+            android:title="From Giao Bài Tập"
+            android:contentDescription="Menu description" />
+        <item
+            android:id="@+id/menu_item2"
+            android:title="Xác Nhận Điểm Danh"
+            android:contentDescription="Menu description" />
+    </group>
+</menu>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:background="@drawable/anh4"
+    tools:context=".DangNhapGV">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:src="@drawable/anh2"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ĐĂNG NHẬP GV"
+        android:layout_gravity="center"
+        android:textSize="30dp"
+        android:textColor="#E96B0B"
+        android:textStyle="bold"
+        />
+    <EditText
+        android:id="@+id/et_TenDangNhapGV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tên Đăng Nhập"
+        android:layout_marginTop="20dp"
+        android:padding="10dp"
+        />
+    <EditText
+        android:id="@+id/et_MatKhauGV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Mật Khẩu"
+        android:layout_marginTop="20dp"
+        android:padding="10dp"
+        android:inputType="textPassword"
+        />
+    <TextView
+        android:id="@+id/tv_quen_mat_khau"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quên mật khẩu?"
+        android:layout_gravity="end"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:textColor="#0000FF"
+        android:textSize="14dp"
+        android:textStyle="italic"
+        android:clickable="true"
+        android:focusable="true" />
+
+    <Button
+        android:id="@+id/btn_dang_nhap_Gv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Đăng nhập"
+        android:layout_marginTop="20dp"
+        android:textColor="#FFFFFF"
+        android:textSize="18dp" />
+    <TextView
+        android:id="@+id/tv_dang_ky_GV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chưa có tài khoản? Đăng ký ngay!"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:textColor="#0000FF"
+        android:textSize="14dp"
+        android:textStyle="italic"
+        android:clickable="true"
+        android:focusable="true" />
+</LinearLayout>
