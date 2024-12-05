@@ -65,6 +65,7 @@
         android:layout_height="wrap_content"
         android:text="Đăng Ký"
         android:layout_marginTop="20dp"
+        android:background="@drawable/nutchung"
         android:textColor="#FFFFFF"
         android:textSize="18dp" />
 </LinearLayout>

@@ -1,0 +1,81 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/khoiPhucLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF">
+
+    <!-- Thanh tiêu đề -->
+    <LinearLayout
+        android:id="@+id/khoiPhucHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:background="#00B8A9"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/khoiPhucTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Khôi Phục"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:layout_gravity="center" />
+    </LinearLayout>
+
+    <!-- Form khôi phục -->
+    <LinearLayout
+        android:id="@+id/khoiPhucForm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:layout_marginTop="20dp">
+
+        <EditText
+            android:id="@+id/etHoTen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Họ và Tên"
+            android:padding="12dp"
+            android:background="@drawable/input_background"
+            android:layout_marginBottom="10dp" />
+
+        <EditText
+            android:id="@+id/etMaHS"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Mã HS"
+            android:padding="12dp"
+            android:background="@drawable/input_background"
+            android:layout_marginBottom="10dp" />
+
+        <EditText
+            android:id="@+id/etMonKhoiPhuc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Chọn môn khôi phục"
+            android:padding="12dp"
+            android:background="@drawable/input_background"
+            android:layout_marginBottom="10dp" />
+
+        <EditText
+            android:id="@+id/etLyDo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Lý Do"
+            android:padding="12dp"
+            android:background="@drawable/input_background"
+            android:layout_marginBottom="10dp" />
+
+        <Button
+            android:id="@+id/btnGuiXacNhan"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Gửi xác nhận"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/button_background" />
+    </LinearLayout>
+</LinearLayout>

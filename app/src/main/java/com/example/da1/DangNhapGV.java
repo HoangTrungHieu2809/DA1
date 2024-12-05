@@ -4,12 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class DangNhapGV extends AppCompatActivity {
 
@@ -21,15 +21,22 @@ public class DangNhapGV extends AppCompatActivity {
 
         Button btnDangNhap = findViewById(R.id.btn_dang_nhap_Gv);
         TextView tvDangKy = findViewById(R.id.tv_dang_ky_GV);
+        EditText edtTaiKhoan = findViewById(R.id.et_TenDangNhapGV); // ID của trường nhập tài khoản
+        EditText edtMatKhau = findViewById(R.id.et_MatKhauGV);   // ID của trường nhập mật khẩu
 
-        // Sự kiện Đăng nhập (chưa xử lý đăng nhập thật)
+        // Sự kiện Đăng nhập
         btnDangNhap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Xử lý logic đăng nhập tại đây (ví dụ kiểm tra thông tin với SharedPreferences)
-                Intent intent = new Intent(DangNhapGV.this, Man1_GV.class); // Chuyển tới Man1SV
-                startActivity(intent);
-                finish();
+                String taiKhoan = edtTaiKhoan.getText().toString().trim();
+                String matKhau = edtMatKhau.getText().toString().trim();
+
+                if (taiKhoan.isEmpty() || matKhau.isEmpty()) {
+                    Toast.makeText(DangNhapGV.this, "Vui lòng nhập đầy đủ thông tin!", Toast.LENGTH_SHORT).show();
+                } else {
+                    Intent intent = new Intent(DangNhapGV.this, Man1_GV.class);
+                    startActivity(intent);
+                }
             }
         });
 

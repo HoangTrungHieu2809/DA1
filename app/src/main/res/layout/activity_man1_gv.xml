@@ -17,7 +17,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="?attr/colorPrimary"
+            android:background="#27A5DE"
             android:elevation="4dp"
 
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
@@ -34,6 +34,9 @@
                 android:id="@+id/search_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/search_background2"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="30dp"
                 android:queryHint="Search"
                 android:iconifiedByDefault="false" />
         </androidx.appcompat.widget.Toolbar>

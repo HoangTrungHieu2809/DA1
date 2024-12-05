@@ -1,0 +1,54 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/diemDanh2Layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF">
+
+    <!-- Thanh tiêu đề -->
+    <LinearLayout
+        android:id="@+id/diemDanh2Header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:background="#00B8A9"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/diemDanh2Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Khôi Phục"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:layout_gravity="center" />
+    </LinearLayout>
+
+    <!-- Các nút chức năng -->
+    <LinearLayout
+        android:id="@+id/diemDanh2Functions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginTop="50dp">
+
+        <ImageView
+            android:id="@+id/imageKhôiPhục"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/riset"
+            android:layout_marginBottom="10dp" />
+
+        <Button
+            android:id="@+id/btnKhoiPhuc"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:text="Khôi Phục"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/button_background"
+            android:layout_marginBottom="20dp"
+            android:onClick="openKhoiPhucActivity" />
+    </LinearLayout>
+</LinearLayout>

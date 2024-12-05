@@ -1,12 +1,134 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/mainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Man1SV">
+    android:background="#F5F5F5">
 
+    <!-- Thanh điều hướng -->
+    <LinearLayout
+        android:id="@+id/navigationBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:background="#00B8A9">
 
+        <!-- Menu icon -->
+        <ImageView
+            android:id="@+id/menuIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/menu"
+            android:contentDescription="Menu"
+            android:padding="8dp" />
+
+        <!-- Thanh tìm kiếm -->
+        <EditText
+            android:id="@+id/searchBar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Search"
+            android:padding="12dp"
+            android:background="@drawable/search_background" />
+    </LinearLayout>
+
+    <!-- Phần nội dung (giữa màn hình) -->
+    <LinearLayout
+        android:id="@+id/contentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <!-- Các nút chức năng -->
+        <Button
+            android:id="@+id/btn_DiemDanh"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:text="Điểm Danh"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button_background" />
+        <Button
+            android:id="@+id/btn_LichHoc"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:text="Lịch Học"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button_background" />
+
+        <Button
+            android:id="@+id/btn_BaiTap"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:text="Bài Tập"
+            android:layout_marginTop="10dp"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/button_background" />
+
+        <Button
+            android:id="@+id/btn_HoTro"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:text="Hỗ Trợ"
+            android:layout_marginTop="10dp"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/button_background" />
+    </LinearLayout>
+
+    <!-- Footer icons -->
+    <LinearLayout
+        android:id="@+id/footerIcons"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="#5DB5A4"
+        android:layout_marginBottom="45dp"
+        android:orientation="horizontal"
+        android:weightSum="4"
+       >
+
+        <!-- Icon Home -->
+        <ImageView
+            android:id="@+id/iconHome"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/home"
+            android:contentDescription="Home"
+            android:padding="10dp" />
+
+        <!-- Icon Lịch -->
+        <ImageView
+            android:id="@+id/iconLich"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/lich"
+            android:contentDescription="Schedule"
+            android:padding="10dp" />
+
+        <!-- Icon Logo -->
+        <ImageView
+            android:id="@+id/iconLogo"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/logo2"
+            android:contentDescription="Notifications"
+            android:padding="10dp"  />
+
+        <!-- Icon Người -->
+        <ImageView
+            android:id="@+id/iconNguoi"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/nguoi"
+            android:contentDescription="Profile"
+            android:padding="10dp"/>
+    </LinearLayout>
 </LinearLayout>
