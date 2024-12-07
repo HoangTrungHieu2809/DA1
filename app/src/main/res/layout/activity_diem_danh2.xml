@@ -1,5 +1,4 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/diemDanh2Layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -7,7 +6,6 @@
 
     <!-- Thanh tiêu đề -->
     <LinearLayout
-        android:id="@+id/diemDanh2Header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -16,7 +14,6 @@
         android:gravity="center">
 
         <TextView
-            android:id="@+id/diemDanh2Title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Khôi Phục"
@@ -25,14 +22,13 @@
             android:layout_gravity="center" />
     </LinearLayout>
 
-    <!-- Các nút chức năng -->
+    <!-- Nội dung chính -->
     <LinearLayout
-        android:id="@+id/diemDanh2Functions"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:orientation="vertical"
-        android:gravity="center"
-        android:layout_marginTop="50dp">
+        android:gravity="center">
 
         <ImageView
             android:id="@+id/imageKhôiPhục"
@@ -48,7 +44,52 @@
             android:text="Khôi Phục"
             android:textColor="#FFFFFF"
             android:background="@drawable/button_background"
-            android:layout_marginBottom="20dp"
-            android:onClick="openKhoiPhucActivity" />
+            android:layout_marginBottom="20dp" />
+    </LinearLayout>
+
+    <!-- Thanh điều hướng dưới -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="#5DB5A4"
+        android:orientation="horizontal"
+        android:layout_marginBottom="45dp"
+        android:weightSum="4">
+
+        <ImageView
+            android:id="@+id/navHome"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/home"
+            android:contentDescription="Home"
+            android:padding="10dp" />
+
+        <ImageView
+            android:id="@+id/navSchedule"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/lich"
+            android:contentDescription="Schedule"
+            android:padding="10dp" />
+
+        <ImageView
+            android:id="@+id/navNotifications"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/logo2"
+            android:contentDescription="Notifications"
+            android:padding="10dp" />
+
+        <ImageView
+            android:id="@+id/navProfile"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/nguoi"
+            android:contentDescription="Profile"
+            android:padding="10dp" />
     </LinearLayout>
 </LinearLayout>
