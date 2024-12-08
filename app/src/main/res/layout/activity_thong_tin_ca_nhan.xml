@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1"
+    tools:context=".ThongTinCaNhan">
+
+    <!-- Nội dung phía trên -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#5DB5A4"
+            android:padding="16dp"
+            android:text="Thông Tin Cá Nhân"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/etHoTen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Họ và tên"
+            android:padding="8dp"
+            android:layout_marginTop="16dp"
+            android:background="#FFFFFF" />
+
+        <EditText
+            android:id="@+id/etQueQuan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Quê quán"
+            android:padding="8dp"
+            android:layout_marginTop="8dp"
+            android:background="#FFFFFF" />
+
+        <EditText
+            android:id="@+id/etMaSinhVien"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Mã Sinh Viên"
+            android:padding="8dp"
+            android:layout_marginTop="8dp"
+            android:background="#FFFFFF" />
+
+        <EditText
+            android:id="@+id/etNgaySinh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ngày Sinh"
+            android:padding="8dp"
+            android:layout_marginTop="8dp"
+            android:background="#FFFFFF" />
+
+        <EditText
+            android:id="@+id/etSoThich"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Thuộc Lớp"
+            android:padding="8dp"
+            android:layout_marginTop="8dp"
+            android:background="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btnUpdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Cập nhật thông tin"
+            android:background="#5DB5A4"
+            android:textColor="#FFFFFF"
+            android:padding="12dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvThongTin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Thông tin cá nhân sẽ hiển thị ở đây."
+            android:padding="8dp"
+            android:layout_marginTop="16dp"
+            android:background="#F1F8E9"
+            android:textColor="#212121"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <!-- Thanh điều hướng -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="#5DB5A4"
+        android:orientation="horizontal"
+        android:layout_marginBottom="45dp">
+
+        <ImageView
+            android:id="@+id/navHomeTTCN"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/home"
+            android:contentDescription="Home"
+            android:padding="10dp" />
+
+        <ImageView
+            android:id="@+id/navScheduleTTCN"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/lich"
+            android:contentDescription="Schedule"
+            android:padding="10dp" />
+
+        <ImageView
+            android:id="@+id/navNotificationsTTCN"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/logo2"
+            android:contentDescription="Notifications"
+            android:padding="10dp" />
+
+        <ImageView
+            android:id="@+id/navProfileTTCN"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/nguoi"
+            android:contentDescription="Profile"
+            android:padding="10dp" />
+    </LinearLayout>
+</LinearLayout>

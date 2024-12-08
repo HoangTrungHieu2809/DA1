@@ -12,8 +12,8 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:src="@drawable/anh2"
-        />
+        android:src="@drawable/anh2" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -22,16 +22,26 @@
         android:layout_marginTop="20dp"
         android:textSize="30dp"
         android:textColor="#E96B0B"
-        android:textStyle="bold"
-        />
+        android:textStyle="bold" />
+
+    <!-- EditText cho mã sinh viên -->
+    <EditText
+        android:id="@+id/et_MaSinhVien"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Mã Sinh Viên"
+        android:layout_marginTop="20dp"
+        android:padding="10dp"
+        android:inputType="text" />
+
     <EditText
         android:id="@+id/et_TenDangKySV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Tên Đăng Nhập"
         android:layout_marginTop="20dp"
-        android:padding="10dp"
-        />
+        android:padding="10dp" />
+
     <EditText
         android:id="@+id/et_MatKhauSV"
         android:layout_width="match_parent"
@@ -39,8 +49,8 @@
         android:hint="Mật Khẩu"
         android:layout_marginTop="20dp"
         android:padding="10dp"
-        android:inputType="textPassword"
-        />
+        android:inputType="textPassword" />
+
     <EditText
         android:id="@+id/et_NhapLaiMatKhauSV"
         android:layout_width="match_parent"
@@ -48,8 +58,8 @@
         android:hint="Nhập Lại Mật Khẩu"
         android:layout_marginTop="20dp"
         android:padding="10dp"
-        android:inputType="textPassword"
-        />
+        android:inputType="textPassword" />
+
     <Button
         android:id="@+id/btn_dang_ky_Sv"
         android:layout_width="match_parent"

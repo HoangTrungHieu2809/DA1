@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class DiemDanh1 extends AppCompatActivity {
 
     private Button btnDiemDanh;
+    private ImageView navHome, navSchedule, navNotifications, navProfile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +20,8 @@ public class DiemDanh1 extends AppCompatActivity {
         setContentView(R.layout.activity_diem_danh1);
 
         btnDiemDanh = findViewById(R.id.btnDiemDanh);
+        navHome = findViewById(R.id.navHome);
+        navProfile = findViewById(R.id.navProfile);
 
         btnDiemDanh.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,6 +42,22 @@ public class DiemDanh1 extends AppCompatActivity {
                     // Nếu đã điểm danh hôm nay
                     Toast.makeText(DiemDanh1.this, "Bạn đã điểm danh hôm nay!", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+
+        navHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DiemDanh1.this, Man1SV.class);
+                startActivity(intent);
+            }
+        });
+
+        navProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DiemDanh1.this, Man1SV.class);
+                startActivity(intent);
             }
         });
     }
