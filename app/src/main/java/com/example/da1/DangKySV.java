@@ -68,15 +68,7 @@ public class DangKySV extends AppCompatActivity {
 
                         });
 
-                // Lưu thông tin tài khoản vào SharedPreferences
-                SharedPreferences sharedPreferences = getSharedPreferences("AccountSV", MODE_PRIVATE);
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putString("Ten", ten);
-                editor.putString("MatKhau", matKhau);
-                editor.apply();
 
-                Toast.makeText(DangKySV.this, "Đăng ký thành công!", Toast.LENGTH_SHORT).show();
-                finish(); // Đóng màn hình đăng ký sau khi hoàn tất
             }
         });
     }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/action_notifications"
+        android:id="@+id/menu_thong_bao"
         android:title="Thông Báo" />
     <item
         android:id="@+id/action_news"
@@ -13,6 +13,6 @@
         android:id="@+id/action_diem_theo_mon"
         android:title="Điểm theo môn " />
     <item
-        android:id="@+id/action_DX"
+        android:id="@+id/menu_dang_xuat"
         android:title="Đăng Xuất" />
 </menu>

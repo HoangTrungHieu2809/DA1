@@ -11,7 +11,10 @@ import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class DangNhapSV extends AppCompatActivity {
+    FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +27,9 @@ public class DangNhapSV extends AppCompatActivity {
         EditText edtTaiKhoan = findViewById(R.id.et_TenDangNhapSV);
         EditText edtMatKhau = findViewById(R.id.et_MatKhauSV);
 
+        // Khởi tạo Firebase Authentication
+        auth = FirebaseAuth.getInstance();
+
         // Sự kiện Đăng nhập
         btnDangNhap.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,8 +40,18 @@ public class DangNhapSV extends AppCompatActivity {
                 if (taiKhoan.isEmpty() || matKhau.isEmpty()) {
                     Toast.makeText(DangNhapSV.this, "Vui lòng nhập đầy đủ thông tin!", Toast.LENGTH_SHORT).show();
                 } else {
-                    Intent intent = new Intent(DangNhapSV.this, Man1SV.class);
-                    startActivity(intent);
+                    // Xác thực đăng nhập với Firebase
+                    auth.signInWithEmailAndPassword(taiKhoan, matKhau)
+                            .addOnCompleteListener(task -> {
+                                if (task.isSuccessful()) {
+                                    Toast.makeText(DangNhapSV.this, "Đăng nhập thành công!", Toast.LENGTH_SHORT).show();
+                                    Intent intent = new Intent(DangNhapSV.this, Man1SV.class);
+                                    startActivity(intent);
+                                    finish(); // Đóng màn hình đăng nhập
+                                } else {
+                                    Toast.makeText(DangNhapSV.this, "Đăng nhập thất bại: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                                }
+                            });
                 }
             }
         });

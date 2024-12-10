@@ -2,6 +2,7 @@ package com.example.da1;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,7 +13,12 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+
 public class DangKyGV extends AppCompatActivity {
+    FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +30,8 @@ public class DangKyGV extends AppCompatActivity {
         EditText etNhapLaiMatKhau = findViewById(R.id.et_NhapLaiMatKhauGV);
         EditText etNganhDay = findViewById(R.id.et_NganhDay);
         Button btnDangKy = findViewById(R.id.btn_dang_ky_Gv);
+
+        auth = FirebaseAuth.getInstance();
 
         btnDangKy.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,16 +51,25 @@ public class DangKyGV extends AppCompatActivity {
                     return;
                 }
 
-                // Lưu thông tin vào SharedPreferences
-                SharedPreferences sharedPreferences = getSharedPreferences("AccountGV", MODE_PRIVATE);
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putString("Ten", ten);
-                editor.putString("MatKhau", matKhau);
-                editor.putString("NganhDay", nganhDay);
-                editor.apply();
+                // Tạo tài khoản trên Firebase
+                auth.createUserWithEmailAndPassword(ten, matKhau)
+                        .addOnCompleteListener(task -> {
+                            if (task.isSuccessful()) {
+                                Toast.makeText(DangKyGV.this, "Đăng ký thành công!", Toast.LENGTH_SHORT).show();
+                                finish(); // Đóng màn hình đăng ký
+                            } else {
+                                Log.e("DangKy", "Đăng ký thất bại", task.getException());
+                                Toast.makeText(DangKyGV.this, "Đăng ký thất bại: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                            }
+                            if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
+                                Toast.makeText(DangKyGV.this, "Email không hợp lệ!", Toast.LENGTH_SHORT).show();
+                            } else if (task.getException() instanceof FirebaseAuthUserCollisionException) {
+                                Toast.makeText(DangKyGV.this, "Email này đã được sử dụng!", Toast.LENGTH_SHORT).show();
+                            }
 
-                Toast.makeText(DangKyGV.this, "Đăng ký thành công!", Toast.LENGTH_SHORT).show();
-                finish();
+                        });
+
+
             }
         });
     }
