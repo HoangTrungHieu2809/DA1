@@ -1,9 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Man1_GV">
+    tools:context=".Man1_GV"
+    android:background="#F7F9FC">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -38,14 +40,180 @@
                 android:iconifiedByDefault="false" />
         </androidx.appcompat.widget.Toolbar>
 
-        <!-- RecyclerView to display classes -->
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_view"
+        <!-- LinearLayout for class buttons -->
+        <ScrollView
             android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:id="@+id/class_buttons_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Buttons for classes -->
+                <Button
+                    android:id="@+id/btn_10A1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="10A1"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/btn_background"
+                    android:textColor="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/btn_10A2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="10A2"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/btn_background"
+                    android:textColor="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/btn_10A3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="10A3"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/btn_background"
+                    android:textColor="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/btn_11A1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="11A1"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/btn_background"
+                    android:textColor="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/btn_11A2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="11A2"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/btn_background"
+                    android:textColor="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/btn_11A3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="11A3"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/btn_background"
+                    android:textColor="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/btn_12A1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="12A1"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/btn_background"
+                    android:textColor="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/btn_12A2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="12A2"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/btn_background"
+                    android:textColor="#FFFFFF" />
+
+                <Button
+                    android:id="@+id/btn_12A3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="12A3"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/btn_background"
+                    android:textColor="#FFFFFF" />
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <!-- Footer for Giảng Viên (GV) at bottom -->
+    <LinearLayout
+        android:id="@+id/footerIconsGV"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="#27A5DE"
+        android:orientation="horizontal"
+        android:layout_gravity="bottom"
+        android:weightSum="4">
+
+        <!-- Icon Home - Giảng Viên -->
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:clipToPadding="false"
-            android:layout_margin="5dp"
-            android:padding="8dp"
-            android:scrollbars="vertical" />
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iconHomeGV"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/home"
+                android:contentDescription="Home"
+                android:padding="8dp" />
+        </LinearLayout>
+
+        <!-- Icon Lịch - Giảng Viên -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iconLichGV"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/lich"
+                android:contentDescription="Schedule"
+                android:padding="8dp" />
+        </LinearLayout>
+
+        <!-- Icon Logo - Giảng Viên -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iconLogoGV"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/logo2"
+                android:contentDescription="Notifications"
+                android:padding="8dp" />
+        </LinearLayout>
+
+        <!-- Icon Người - Giảng Viên -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iconNguoiGV"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/nguoi"
+                android:contentDescription="Profile"
+                android:padding="8dp" />
+        </LinearLayout>
+
     </LinearLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

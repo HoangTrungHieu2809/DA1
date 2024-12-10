@@ -88,7 +88,6 @@
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:background="#5DB5A4"
-
         android:orientation="horizontal"
         android:weightSum="4"
        >
@@ -133,5 +132,4 @@
             android:contentDescription="Profile"
             android:padding="10dp"/>
     </LinearLayout>
-
 </LinearLayout>

@@ -40,7 +40,7 @@
             android:name=".Man1_GV"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Man1SV"
             android:exported="false" />
         <activity
             android:name=".DangNhapSV"
@@ -55,7 +55,7 @@
             android:name=".DangKySV"
             android:exported="false" />
         <activity
-            android:name=".Man1SV"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
