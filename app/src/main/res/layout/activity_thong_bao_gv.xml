@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ThongBaoGV"
+    android:background="#F7F9FC">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- Toolbar with search and menu buttons -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#27A5DE"
+            android:elevation="4dp"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <ImageButton
+                android:id="@+id/menu_button"
+                android:layout_width="wrap_content"
+                android:layout_height="50sp"
+                android:src="@drawable/menu"
+                android:background="?attr/selectableItemBackground"
+                android:contentDescription="Menu" />
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/search_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="30dp"
+                android:background="@drawable/search_background2"
+                android:queryHint="Search"
+                android:iconifiedByDefault="false" />
+        </androidx.appcompat.widget.Toolbar>
+
+    </LinearLayout>
+
+    <!-- Footer for Giảng Viên (GV) at bottom -->
+    <LinearLayout
+        android:id="@+id/footerIconsGV"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="#27A5DE"
+        android:orientation="horizontal"
+        android:layout_gravity="bottom"
+        android:weightSum="4">
+
+        <!-- Icon Home - Giảng Viên -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iconHomeGV"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/home"
+                android:contentDescription="Home"
+                android:padding="8dp" />
+        </LinearLayout>
+
+        <!-- Icon Lịch - Giảng Viên -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iconLichGV"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/lich"
+                android:contentDescription="Schedule"
+                android:padding="8dp" />
+        </LinearLayout>
+
+        <!-- Icon Logo - Giảng Viên -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iconLogoGV"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/logo2"
+                android:contentDescription="Notifications"
+                android:padding="8dp" />
+        </LinearLayout>
+
+        <!-- Icon Người - Giảng Viên -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iconNguoiGV"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/nguoi"
+                android:contentDescription="Profile"
+                android:padding="8dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- RecyclerView hiển thị danh sách thông báo -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="8dp"
+        android:clipToPadding="false" />
+
+    <!-- Floating Action Button for adding notifications -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_add_notification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="60dp"
+        android:layout_marginRight="20dp"
+        android:contentDescription="Add Notification"
+        android:src="@drawable/nut_add"
+        app:backgroundTint="@color/design_default_color_primary" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -4,21 +4,37 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.PopupMenu;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Man1_GV extends AppCompatActivity {
+    private ImageView iconHomeGV, iconLichGV, iconLogoGV,iconNguoiGV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_man1_gv);
 
+        //ánh xạ
+        iconLichGV = findViewById(R.id.iconLichGV);
+        iconLogoGV = findViewById(R.id.iconLogoGV);
+
         // Lắng nghe sự kiện khi ấn vào menu_button
         ImageButton menuButton = findViewById(R.id.menu_button);
+
+        iconLichGV.setOnClickListener(v -> {
+            Intent intent = new Intent(Man1_GV.this, LichHoc.class);
+            startActivity(intent);
+        });
+        iconLogoGV.setOnClickListener(v -> {
+            Intent intent = new Intent(Man1_GV.this, ThongBaoGV.class);
+            startActivity(intent);
+        });
 
         menuButton.setOnClickListener(new View.OnClickListener() {
             @Override

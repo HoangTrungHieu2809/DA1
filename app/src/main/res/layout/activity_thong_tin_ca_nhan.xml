@@ -65,7 +65,7 @@
             android:background="#FFFFFF" />
 
         <EditText
-            android:id="@+id/etSoThich"
+            android:id="@+id/etThuocLop"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Thuộc lớp"

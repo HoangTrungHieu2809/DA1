@@ -17,7 +17,7 @@
         android:background="#5DB5A4"
         android:gravity="center"
         android:padding="16dp"
-        android:text="Lịch Học"
+        android:text="Lịch"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         android:textStyle="bold" />

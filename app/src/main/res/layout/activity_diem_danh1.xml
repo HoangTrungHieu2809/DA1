@@ -37,6 +37,15 @@
         android:timePickerMode="spinner"
         android:layout_margin="16dp" />
 
+    <!-- Nút chọn ngày -->
+    <Button
+        android:id="@+id/btnChooseDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Chọn ngày"
+        android:layout_marginBottom="16dp" />
+
+
     <!-- Nút Điểm Danh -->
     <Button
         android:id="@+id/btnDiemDanh"
