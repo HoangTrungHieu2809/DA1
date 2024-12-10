@@ -9,16 +9,14 @@ import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 import android.view.MenuItem;
-import android.widget.PopupMenu;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Man1SV extends AppCompatActivity {
 
     private Button btnDiemDanh, btnLichHoc, btnBaiTap, btnHoTro;
-    private ImageView iconnguoi, toolbarMan1;
+    private ImageView iconnguoi, toolbarMan1, iconLich;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +29,7 @@ public class Man1SV extends AppCompatActivity {
         btnHoTro = findViewById(R.id.btn_HoTro);
         iconnguoi = findViewById(R.id.iconNguoi);
         toolbarMan1 = findViewById(R.id.toolbarMan1);
+        iconLich = findViewById(R.id.iconLich);
 
         btnDiemDanh.setOnClickListener(v -> {
             Intent intent = new Intent(Man1SV.this, DiemDanh1.class);
@@ -52,6 +51,12 @@ public class Man1SV extends AppCompatActivity {
             startActivity(intent);
         });
 
+        iconLich.setOnClickListener(v -> {
+            Intent intent = new Intent(Man1SV.this, LichHoc.class);
+            startActivity(intent);
+        });
+
+
         toolbarMan1.setOnClickListener(v -> showPopupMenu(v));
     }
 
@@ -71,7 +76,8 @@ public class Man1SV extends AppCompatActivity {
                 // Xử lý cho Thông Báo
                 return true;
             } else if (item.getItemId() == R.id.action_news) {
-                // Xử lý cho Tin Tức
+                // Xử lý khi ấn vào Tin Tức
+                showNewsDialog();
                 return true;
             } else if (item.getItemId() == R.id.action_diem_theo_mon) {
                 // Xử lý cho Lịch Sử Điểm Theo Môn
@@ -79,6 +85,20 @@ public class Man1SV extends AppCompatActivity {
             }
             return false;
         });
+    }
+
+    // Hàm hiển thị hộp thoại thông báo Tin Tức
+    private void showNewsDialog() {
+        String newsContent = "-Sáng nay sẽ có buổi chào cờ tại sân trường lúc 7:00 AM.\n\n" +
+                "-Hôm nay sẽ có buổi trình diễn văn nghệ ở sân khấu trường lúc 3:00 PM.\n\n" +
+                "-Hạn cuối nộp tiền học kì 2 Là 23h ngày 4-1-2025.\n";
+
+        new AlertDialog.Builder(this)
+                .setTitle("Tin Tức Hôm Nay")
+                .setMessage(newsContent)  // Thông tin sự kiện trong ngày
+                .setPositiveButton("OK", (dialog, which) -> dialog.dismiss()) // Nút OK để đóng hộp thoại
+                .create()
+                .show();
     }
 
     // Hàm hiển thị hộp thoại xác nhận khi đăng xuất
@@ -102,4 +122,3 @@ public class Man1SV extends AppCompatActivity {
                 .show();
     }
 }
-

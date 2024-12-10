@@ -45,7 +45,7 @@ public class DangNhapGV extends AppCompatActivity {
                             .addOnCompleteListener(task -> {
                                 if (task.isSuccessful()) {
                                     Toast.makeText(DangNhapGV.this, "Đăng nhập thành công!", Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(DangNhapGV.this, Man1SV.class);
+                                    Intent intent = new Intent(DangNhapGV.this, Man1_GV.class);
                                     startActivity(intent);
                                     finish(); // Đóng màn hình đăng nhập
                                 } else {

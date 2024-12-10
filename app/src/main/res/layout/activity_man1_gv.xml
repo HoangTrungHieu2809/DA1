@@ -1,12 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Man1SV">
+    tools:context=".Man1_GV">
 
-    <!-- Main content inside LinearLayout -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -19,7 +17,6 @@
             android:layout_height="wrap_content"
             android:background="#27A5DE"
             android:elevation="4dp"
-
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
             <ImageButton
@@ -34,45 +31,21 @@
                 android:id="@+id/search_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/search_background2"
                 android:layout_marginRight="20dp"
                 android:layout_marginLeft="30dp"
+                android:background="@drawable/search_background2"
                 android:queryHint="Search"
                 android:iconifiedByDefault="false" />
         </androidx.appcompat.widget.Toolbar>
 
         <!-- RecyclerView to display classes -->
-
-        <!-- Navigation Drawer -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:clipToPadding="false"
+            android:layout_margin="5dp"
             android:padding="8dp"
             android:scrollbars="vertical" />
-
-        <com.google.android.material.navigation.NavigationView
-            android:id="@+id/navigation_view"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="start"
-            android:background="@color/white"
-            app:menu="@menu/navigation_menu"
-            />
-
     </LinearLayout>
-
-    <!-- Floating Action Button (FAB) -->
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab_add_class"
-        android:layout_marginHorizontal="20sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end|bottom"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="70dp"
-        android:src="@drawable/nut_add"
-        android:contentDescription="Thêm lớp" />
-
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

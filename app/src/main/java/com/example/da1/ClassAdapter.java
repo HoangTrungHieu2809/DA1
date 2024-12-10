@@ -1,14 +1,17 @@
 package com.example.da1;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
-import java.util.List;
-public class ClassAdapter extends RecyclerView.Adapter<ClassAdapter.ClassViewHolder>{
-    private List<String> classList;
+import java.util.ArrayList;
 
-    public ClassAdapter(List<String> classList) {
+public class ClassAdapter extends RecyclerView.Adapter<ClassAdapter.ClassViewHolder> {
+
+    private ArrayList<String> classList;
+
+    public ClassAdapter(ArrayList<String> classList) {
         this.classList = classList;
     }
 
@@ -26,6 +29,11 @@ public class ClassAdapter extends RecyclerView.Adapter<ClassAdapter.ClassViewHol
     @Override
     public int getItemCount() {
         return classList.size();
+    }
+
+    public void updateList(ArrayList<String> newList) {
+        classList = newList;
+        notifyDataSetChanged();
     }
 
     public static class ClassViewHolder extends RecyclerView.ViewHolder {

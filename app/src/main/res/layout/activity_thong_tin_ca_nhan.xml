@@ -88,12 +88,15 @@
             android:id="@+id/tvThongTin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Thông tin cá nhân sẽ hiển thị ở đây."
-            android:padding="8dp"
+            android:padding="16dp"
             android:layout_marginTop="16dp"
-            android:background="#F1F8E9"
-            android:textColor="#212121"
-            android:textSize="16sp" />
+            android:background="#E3F2FD"
+            android:textColor="#0BC0D7"
+            android:textSize="18sp"
+            android:gravity="start"
+            android:lineSpacingExtra="4dp"
+            android:textStyle="bold"
+            android:text="Thông tin cá nhân sẽ hiển thị ở đây." />
     </LinearLayout>
 
     <!-- Thanh điều hướng -->
@@ -140,4 +143,5 @@
             android:contentDescription="Profile"
             android:padding="10dp" />
     </LinearLayout>
+
 </LinearLayout>
