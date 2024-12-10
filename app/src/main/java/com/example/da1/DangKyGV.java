@@ -28,7 +28,6 @@ public class DangKyGV extends AppCompatActivity {
         EditText etTen = findViewById(R.id.et_TenDangKyGV);
         EditText etMatKhau = findViewById(R.id.et_MatKhauGV);
         EditText etNhapLaiMatKhau = findViewById(R.id.et_NhapLaiMatKhauGV);
-        EditText etNganhDay = findViewById(R.id.et_NganhDay);
         Button btnDangKy = findViewById(R.id.btn_dang_ky_Gv);
 
         auth = FirebaseAuth.getInstance();
@@ -39,9 +38,8 @@ public class DangKyGV extends AppCompatActivity {
                 String ten = etTen.getText().toString();
                 String matKhau = etMatKhau.getText().toString();
                 String nhapLaiMatKhau = etNhapLaiMatKhau.getText().toString();
-                String nganhDay = etNganhDay.getText().toString();
 
-                if (ten.isEmpty() || matKhau.isEmpty() || nhapLaiMatKhau.isEmpty() || nganhDay.isEmpty()) {
+                if (ten.isEmpty() || matKhau.isEmpty() || nhapLaiMatKhau.isEmpty() ) {
                     Toast.makeText(DangKyGV.this, "Vui lòng nhập đầy đủ thông tin!", Toast.LENGTH_SHORT).show();
                     return;
                 }

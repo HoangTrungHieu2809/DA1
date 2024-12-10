@@ -28,7 +28,7 @@
         android:id="@+id/et_TenDangKyGV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Tên Đăng Nhập"
+        android:hint="Email"
         android:layout_marginTop="20dp"
         android:padding="10dp" />
 
@@ -50,23 +50,7 @@
         android:padding="10dp"
         android:inputType="textPassword" />
 
-    <!-- EditText mới cho mã giảng viên -->
-    <EditText
-        android:id="@+id/et_MaGiangVien"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Mã Giảng Viên"
-        android:layout_marginTop="20dp"
-        android:padding="10dp"
-        android:inputType="text" />
 
-    <EditText
-        android:id="@+id/et_NganhDay"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Ngành Dạy"
-        android:layout_marginTop="20dp"
-        android:padding="10dp" />
 
     <Button
         android:id="@+id/btn_dang_ky_Gv"
