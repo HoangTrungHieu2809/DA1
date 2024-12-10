@@ -15,6 +15,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class Man1_GV extends AppCompatActivity {
     private ImageView iconHomeGV, iconLichGV, iconLogoGV,iconNguoiGV;
 
+    private ImageView navHomeTTCNGV, navScheduleTTCNGV, navNotificationsTTCNGV, navProfileTTCNGV;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,6 +71,35 @@ public class Man1_GV extends AppCompatActivity {
                 popupMenu.show();
             }
         });
+
+        // Xử lý sự kiện click cho các nút lớp học
+        findViewById(R.id.btn_10A1).setOnClickListener(v -> openAddStudentScreen("10A1"));
+        findViewById(R.id.btn_10A2).setOnClickListener(v -> openAddStudentScreen("10A2"));
+        findViewById(R.id.btn_10A3).setOnClickListener(v -> openAddStudentScreen("10A3"));
+        findViewById(R.id.btn_11A1).setOnClickListener(v -> openAddStudentScreen("11A1"));
+        findViewById(R.id.btn_11A2).setOnClickListener(v -> openAddStudentScreen("11A2"));
+        findViewById(R.id.btn_11A3).setOnClickListener(v -> openAddStudentScreen("11A3"));
+        findViewById(R.id.btn_12A1).setOnClickListener(v -> openAddStudentScreen("12A1"));
+        findViewById(R.id.btn_12A2).setOnClickListener(v -> openAddStudentScreen("12A2"));
+        findViewById(R.id.btn_12A3).setOnClickListener(v -> openAddStudentScreen("12A3"));
+
+        // Xử lý sự kiện khi ấn vào biểu tượng "Người" (Profile)
+        ImageView iconNguoiGV = findViewById(R.id.iconNguoiGV);
+        iconNguoiGV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Mở màn hình Thông tin cá nhân giảng viên
+                Intent intent = new Intent(Man1_GV.this, ThongTinCaNhanGV.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    // Hàm mở màn hình thêm sinh viên
+    private void openAddStudentScreen(String className) {
+        Intent intent = new Intent(Man1_GV.this, AddStudent.class);
+        intent.putExtra("class_name", className); // Truyền tên lớp
+        startActivity(intent);
     }
 
     // Hàm hiển thị hộp thoại thông báo Tin Tức
