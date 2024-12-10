@@ -12,15 +12,19 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class HoTroLienHe extends AppCompatActivity {
-    ImageView navHome, navProfile;
+    ImageView navHome, navProfile, navSchedule;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_ho_tro_lien_he);
 
+        // anhs xaj
         navHome = findViewById(R.id.navHome);
         navProfile = findViewById(R.id.navProfile);
+        navSchedule = findViewById(R.id.navSchedule);
+
 
         navHome.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,6 +37,13 @@ public class HoTroLienHe extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(HoTroLienHe.this, ThongTinCaNhan.class);
+                startActivity(intent);
+            }
+        });
+        navSchedule.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HoTroLienHe.this, LichHoc.class);
                 startActivity(intent);
             }
         });

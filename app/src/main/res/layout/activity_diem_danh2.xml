@@ -63,6 +63,7 @@
             android:layout_weight="1"
             android:src="@drawable/home"
             android:contentDescription="Home"
+
             android:padding="10dp" />
 
         <ImageView

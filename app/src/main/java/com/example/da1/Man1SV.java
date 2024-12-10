@@ -14,14 +14,11 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.google.firebase.auth.FirebaseAuth;
-
 public class Man1SV extends AppCompatActivity {
 
     private Button btnDiemDanh, btnLichHoc, btnBaiTap, btnHoTro;
     private ImageView iconnguoi, toolbarMan1;
-    private static final int MENU_DANG_XUAT = R.id.menu_dang_xuat;
-    private static final int MENU_THONG_BAO = R.id.menu_thong_bao;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,7 +31,6 @@ public class Man1SV extends AppCompatActivity {
         btnHoTro = findViewById(R.id.btn_HoTro);
         iconnguoi =findViewById(R.id.iconNguoi);
         toolbarMan1 = findViewById(R.id.toolbarMan1);
-
 
 
         btnDiemDanh.setOnClickListener(new View.OnClickListener() {
@@ -81,31 +77,7 @@ public class Man1SV extends AppCompatActivity {
         PopupMenu popupMenu = new PopupMenu(this, view);
         MenuInflater inflater = popupMenu.getMenuInflater();
         inflater.inflate(R.menu.menu_popup, popupMenu.getMenu()); // Kết nối file menu_popup.xml
-
-        // Thêm xử lý sự kiện khi chọn mục trong PopupMenu
-        popupMenu.setOnMenuItemClickListener(item -> {
-            switch (item.getItemId()) {
-                case MENU_DANG_XUAT: // ID trong file menu_popup.xml
-                    handleLogout(); // Xử lý đăng xuất
-                    return true;
-                case MENU_THONG_BAO:
-                    return true;
-                default:
-                    return false;
-            }
-        });
         popupMenu.show();
-    }
-    // Hàm xử lý đăng xuất
-    private void handleLogout() {
-        // Đăng xuất khỏi Firebase Authentication
-        FirebaseAuth.getInstance().signOut();
 
-        // Chuyển về màn hình đăng nhập
-        Intent intent = new Intent(Man1SV.this, DangNhapSV.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK); // Xóa stack lịch sử
-        startActivity(intent);
-        finish(); // Đóng màn hiện tại
     }
-
 }

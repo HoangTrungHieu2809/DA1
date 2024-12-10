@@ -23,8 +23,6 @@
     </LinearLayout>
 
     <!-- Lịch -->
-
-    <!-- Đồng hồ (TimePicker) -->
     <CalendarView
         android:id="@+id/calendarView"
         android:layout_width="match_parent"
@@ -48,8 +46,7 @@
         android:textColor="#FFFFFF"
         android:background="@drawable/button_background"
         android:layout_gravity="center"
-        android:layout_marginBottom="10dp"
-        />
+        android:layout_marginBottom="10dp" />
 
     <!-- Thanh điều hướng dưới -->
     <LinearLayout

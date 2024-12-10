@@ -7,6 +7,7 @@ public class AttendanceManager {
     private static final String PREF_NAME = "attendance_prefs";
     private static final String KEY_LAST_ATTENDANCE_DATE = "last_attendance_date";
 
+    // Lưu ngày điểm danh
     public static void saveAttendanceDate(Context context, String date) {
         SharedPreferences prefs = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
@@ -14,6 +15,7 @@ public class AttendanceManager {
         editor.apply();
     }
 
+    // Lấy ngày điểm danh cuối cùng
     public static String getLastAttendanceDate(Context context) {
         SharedPreferences prefs = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
         return prefs.getString(KEY_LAST_ATTENDANCE_DATE, "");
