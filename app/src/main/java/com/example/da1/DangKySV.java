@@ -7,9 +7,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+
 public class DangKySV extends AppCompatActivity {
+    FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,8 +28,10 @@ public class DangKySV extends AppCompatActivity {
         EditText etNhapLaiMatKhau = findViewById(R.id.et_NhapLaiMatKhauSV);
         Button btnDangKy = findViewById(R.id.btn_dang_ky_Sv);
 
+        auth = FirebaseAuth.getInstance();
+
         // Sự kiện khi nhấn nút Đăng ký
-            btnDangKy.setOnClickListener(new View.OnClickListener() {
+        btnDangKy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String ten = etTen.getText().toString().trim();
@@ -41,6 +49,24 @@ public class DangKySV extends AppCompatActivity {
                     Toast.makeText(DangKySV.this, "Mật khẩu không khớp!", Toast.LENGTH_SHORT).show();
                     return;
                 }
+
+                // Tạo tài khoản trên Firebase
+                auth.createUserWithEmailAndPassword(ten, matKhau)
+                        .addOnCompleteListener(task -> {
+                            if (task.isSuccessful()) {
+                                Toast.makeText(DangKySV.this, "Đăng ký thành công!", Toast.LENGTH_SHORT).show();
+                                finish(); // Đóng màn hình đăng ký
+                            } else {
+                                Log.e("DangKy", "Đăng ký thất bại", task.getException());
+                                Toast.makeText(DangKySV.this, "Đăng ký thất bại: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                            }
+                            if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
+                                Toast.makeText(DangKySV.this, "Email không hợp lệ!", Toast.LENGTH_SHORT).show();
+                            } else if (task.getException() instanceof FirebaseAuthUserCollisionException) {
+                                Toast.makeText(DangKySV.this, "Email này đã được sử dụng!", Toast.LENGTH_SHORT).show();
+                            }
+
+                        });
 
                 // Lưu thông tin tài khoản vào SharedPreferences
                 SharedPreferences sharedPreferences = getSharedPreferences("AccountSV", MODE_PRIVATE);

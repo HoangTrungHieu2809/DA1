@@ -38,7 +38,8 @@
         android:id="@+id/et_TenDangKySV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Tên Đăng Nhập"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
         android:layout_marginTop="20dp"
         android:padding="10dp" />
 
