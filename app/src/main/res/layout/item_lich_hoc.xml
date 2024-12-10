@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#BCE1DA"
+    android:layout_marginBottom="12dp"
+    android:padding="12dp">
+
+    <!-- Tiêu đề môn học -->
+    <TextView
+        android:id="@+id/tvTenMonHoc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lập Trình Java"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <!-- Ngày học -->
+    <TextView
+        android:id="@+id/tvNgay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="23/11/2024"
+        android:textColor="#000000"
+        android:textSize="14sp" />
+
+    <!-- Phòng học -->
+    <TextView
+        android:id="@+id/tvPhong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Phòng: P402"
+        android:textColor="#000000"
+        android:textSize="14sp" />
+
+    <!-- Ca học -->
+    <TextView
+        android:id="@+id/tvCaHoc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ca Sáng (7h - 11h30)"
+        android:textColor="#000000"
+        android:textSize="14sp" />
+</LinearLayout>

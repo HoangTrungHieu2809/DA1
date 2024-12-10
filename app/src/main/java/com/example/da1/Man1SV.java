@@ -9,8 +9,10 @@ import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 import android.view.MenuItem;
+import android.widget.PopupMenu;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Man1SV extends AppCompatActivity {
@@ -50,12 +52,10 @@ public class Man1SV extends AppCompatActivity {
             Intent intent = new Intent(Man1SV.this, ThongTinCaNhan.class);
             startActivity(intent);
         });
-
         iconLich.setOnClickListener(v -> {
             Intent intent = new Intent(Man1SV.this, LichHoc.class);
             startActivity(intent);
         });
-
 
         toolbarMan1.setOnClickListener(v -> showPopupMenu(v));
     }
@@ -76,7 +76,6 @@ public class Man1SV extends AppCompatActivity {
                 // Xử lý cho Thông Báo
                 return true;
             } else if (item.getItemId() == R.id.action_news) {
-                // Xử lý khi ấn vào Tin Tức
                 showNewsDialog();
                 return true;
             } else if (item.getItemId() == R.id.action_diem_theo_mon) {
@@ -122,3 +121,4 @@ public class Man1SV extends AppCompatActivity {
                 .show();
     }
 }
+
