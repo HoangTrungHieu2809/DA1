@@ -70,14 +70,14 @@ public class DiemDanh1 extends AppCompatActivity {
             } else if (selectedDate.equals(lastAttendanceDate)) {
                 // Nếu đã điểm danh ngày này
                 Toast.makeText(DiemDanh1.this, "Bạn đã điểm danh ngày này rồi!", Toast.LENGTH_SHORT).show();
-            } else if (isYesterday(selectedDate, lastAttendanceDate)) {
+            } else if (isTomorrow(selectedDate, lastAttendanceDate)) {
                 // Nếu là ngày hôm qua, chuyển sang màn hình khôi phục
                 Toast.makeText(DiemDanh1.this, "Điểm danh cho ngày hôm qua, chuyển đến màn hình khôi phục!", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(DiemDanh1.this, DiemDanh2.class);
                 startActivity(intent);
-            } else if (isTomorrow(selectedDate, lastAttendanceDate)) {
+            } else if (isYesterday(selectedDate, lastAttendanceDate)) {
                 // Nếu là ngày mai
-                Toast.makeText(DiemDanh1.this, "Chưa đến ngày để điểm danh lại!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(DiemDanh1.this, "Chưa đến ngày để điểm danh!", Toast.LENGTH_SHORT).show();
             } else {
                 // Trường hợp khác
                 Toast.makeText(DiemDanh1.this, "Ngày được chọn không hợp lệ để điểm danh!", Toast.LENGTH_SHORT).show();

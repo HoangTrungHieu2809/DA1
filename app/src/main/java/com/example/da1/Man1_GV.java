@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
@@ -13,66 +12,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Man1_GV extends AppCompatActivity {
-    private ImageView iconHomeGV, iconLichGV, iconLogoGV,iconNguoiGV;
+    private ImageView iconHomeGV, iconLichGV, iconLogoGV, iconNguoiGV;
 
-    private ImageView navHomeTTCNGV, navScheduleTTCNGV, navNotificationsTTCNGV, navProfileTTCNGV;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_man1_gv);
 
-        //ánh xạ
+        // Ánh xạ các view
         iconLichGV = findViewById(R.id.iconLichGV);
         iconLogoGV = findViewById(R.id.iconLogoGV);
+        iconNguoiGV = findViewById(R.id.iconNguoiGV);
 
-        // Lắng nghe sự kiện khi ấn vào menu_button
-        ImageButton menuButton = findViewById(R.id.menu_button);
-
-        iconLichGV.setOnClickListener(v -> {
-            Intent intent = new Intent(Man1_GV.this, LichHoc.class);
-            startActivity(intent);
-        });
-        iconLogoGV.setOnClickListener(v -> {
-            Intent intent = new Intent(Man1_GV.this, ThongBaoGV.class);
-            startActivity(intent);
-        });
-
-        menuButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Tạo PopupMenu và chỉ định vị trí để hiển thị
-                PopupMenu popupMenu = new PopupMenu(Man1_GV.this, v);
-
-                // Inflate menu từ menu.xml
-                getMenuInflater().inflate(R.menu.toolbar_menu, popupMenu.getMenu());
-
-                // Thiết lập sự kiện khi người dùng chọn mục trong menu
-                popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-                    @Override
-                    public boolean onMenuItemClick(MenuItem item) {
-                        // Kiểm tra ID của item được chọn
-                        if (item.getItemId() == R.id.menu_news) {
-                            // Xử lý mục "Tin Tức"
-                            showNewsDialog();
-                            return true;
-                        } else if (item.getItemId() == R.id.menu_assignment) {
-                            // Xử lý mục "Bài Tập"
-                            return true;
-                        } else if (item.getItemId() == R.id.menu_logout) {
-                            // Xử lý mục "Đăng Xuất"
-                            showLogoutConfirmationDialog();
-                            return true;
-                        }
-                        return false;
-                    }
-                });
-
-                // Hiển thị menu
-                popupMenu.show();
-            }
-        });
-
-        // Xử lý sự kiện click cho các nút lớp học
+        // Lắng nghe sự kiện khi ấn vào các lớp
         findViewById(R.id.btn_10A1).setOnClickListener(v -> openAddStudentScreen("10A1"));
         findViewById(R.id.btn_10A2).setOnClickListener(v -> openAddStudentScreen("10A2"));
         findViewById(R.id.btn_10A3).setOnClickListener(v -> openAddStudentScreen("10A3"));
@@ -83,15 +35,20 @@ public class Man1_GV extends AppCompatActivity {
         findViewById(R.id.btn_12A2).setOnClickListener(v -> openAddStudentScreen("12A2"));
         findViewById(R.id.btn_12A3).setOnClickListener(v -> openAddStudentScreen("12A3"));
 
-        // Xử lý sự kiện khi ấn vào biểu tượng "Người" (Profile)
-        ImageView iconNguoiGV = findViewById(R.id.iconNguoiGV);
-        iconNguoiGV.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Mở màn hình Thông tin cá nhân giảng viên
-                Intent intent = new Intent(Man1_GV.this, ThongTinCaNhanGV.class);
-                startActivity(intent);
-            }
+        // Lắng nghe sự kiện khi ấn vào biểu tượng "Người" (Profile)
+        iconNguoiGV.setOnClickListener(v -> {
+            Intent intent = new Intent(Man1_GV.this, ThongTinCaNhanGV.class);
+            startActivity(intent);
+        });
+
+        // Lắng nghe sự kiện khi ấn vào các biểu tượng khác
+        iconLichGV.setOnClickListener(v -> {
+            Intent intent = new Intent(Man1_GV.this, LichHoc.class);
+            startActivity(intent);
+        });
+        iconLogoGV.setOnClickListener(v -> {
+            Intent intent = new Intent(Man1_GV.this, ThongBaoGV.class);
+            startActivity(intent);
         });
     }
 
