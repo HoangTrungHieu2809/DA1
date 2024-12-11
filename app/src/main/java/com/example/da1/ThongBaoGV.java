@@ -1,12 +1,15 @@
 package com.example.da1;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -27,11 +30,17 @@ public class ThongBaoGV extends AppCompatActivity {
     private RecyclerView recyclerView;
     private NotificationAdapter adapter;
     private List<Notification> notificationList;
+    ImageView iconHomeGV, iconLichGV, iconNguoiGV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_thong_bao_gv);
+
+        //ánh xạ
+        iconHomeGV = findViewById(R.id.iconHomeGV);
+        iconLichGV = findViewById(R.id.iconLichGV);
+        iconNguoiGV = findViewById(R.id.iconNguoiGV);
 
         // Khởi tạo Firestore
         db = FirebaseFirestore.getInstance();
@@ -42,7 +51,21 @@ public class ThongBaoGV extends AppCompatActivity {
         adapter = new NotificationAdapter(notificationList);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
-
+        //chọn home
+        iconHomeGV.setOnClickListener(v -> {
+            Intent intent = new Intent(ThongBaoGV.this, Man1_GV.class);
+            startActivity(intent);
+        });
+        //chọn lịch học trên menu
+        iconLichGV.setOnClickListener(v -> {
+            Intent intent = new Intent(ThongBaoGV.this, LichHoc.class);
+            startActivity(intent);
+        });
+        //chọn thông tin cá nhân
+        iconNguoiGV.setOnClickListener(v -> {
+            Intent intent = new Intent(ThongBaoGV.this, ThongTinCaNhanGV.class);
+            startActivity(intent);
+        });
         // Tải dữ liệu thông báo
         fetchNotifications();
 
@@ -104,11 +127,14 @@ public class ThongBaoGV extends AppCompatActivity {
                     for (DocumentSnapshot document : queryDocumentSnapshots) {
                         Notification notification = document.toObject(Notification.class);
                         notificationList.add(notification);
+                        // Log thông tin thông báo
+                        Log.d("Firestore", "Title: " + notification.getTitle() + ", Content: " + notification.getContent());
                     }
                     adapter.notifyDataSetChanged();
                 })
                 .addOnFailureListener(e -> {
                     Toast.makeText(this, "Lỗi khi tải thông báo: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    Log.e("FirestoreError", e.getMessage(), e);
                 });
     }
 }
