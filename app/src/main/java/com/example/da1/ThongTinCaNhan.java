@@ -20,7 +20,7 @@ import java.util.Map;
 
 public class ThongTinCaNhan extends AppCompatActivity {
     ImageView navHomeTTCN;
-    ImageView navScheduleTTCN;
+    ImageView navScheduleTTCN, navNotificationsTTCN;
     Button btnUpdate;
     TextView tvThongTin;
     FirebaseFirestore db;
@@ -37,6 +37,7 @@ public class ThongTinCaNhan extends AppCompatActivity {
         // Ánh xạ các thành phần
         navHomeTTCN = findViewById(R.id.navHomeTTCN);
         navScheduleTTCN = findViewById(R.id.navScheduleTTCN);
+        navNotificationsTTCN = findViewById(R.id.navNotificationsTTCN);
         btnUpdate = findViewById(R.id.btnUpdate);
         tvThongTin = findViewById(R.id.tvThongTin);
 
@@ -53,6 +54,14 @@ public class ThongTinCaNhan extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ThongTinCaNhan.this, LichHoc.class);
+                startActivity(intent);
+            }
+        });
+
+        navNotificationsTTCN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ThongTinCaNhan.this, ThongBaoSV.class);
                 startActivity(intent);
             }
         });
@@ -84,7 +93,7 @@ public class ThongTinCaNhan extends AppCompatActivity {
             userInfo.put("queQuan", queQuan);
             userInfo.put("maSinhVien", maSinhVien);
             userInfo.put("ngaySinh", ngaySinh);
-            userInfo.put("soThich", thuocLop);
+            userInfo.put("thuocLop", thuocLop);
 
             db.collection("ThongTinSinhVien")
                     .document(maSinhVien) // Đặt mã sinh viên làm document ID

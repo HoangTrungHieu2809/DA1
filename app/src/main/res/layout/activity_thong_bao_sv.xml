@@ -17,14 +17,14 @@
         android:background="#5DB5A4"
         android:gravity="center"
         android:padding="16dp"
-        android:text="Lịch Học"
+        android:text="Thông báo"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         android:textStyle="bold" />
 
     <!-- RecyclerView để hiển thị danh sách lịch học -->
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewSchedule"
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"

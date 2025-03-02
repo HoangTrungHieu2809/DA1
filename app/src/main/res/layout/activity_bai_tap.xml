@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F7F9FC"
+    android:gravity="center"
+    android:padding="16dp"
+    tools:context=".BaiTap">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bài Tập"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#27A5DE"
+        android:gravity="center"
+        android:paddingBottom="16dp" />
+
+    <!-- Main Message -->
+    <TextView
+        android:id="@+id/main_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bài tập được giao trên lớp. Sinh viên chủ động làm."
+        android:textSize="28sp"
+        android:textColor="#CC2929"
+        android:gravity="center"
+        android:padding="8dp" />
+
+</LinearLayout>

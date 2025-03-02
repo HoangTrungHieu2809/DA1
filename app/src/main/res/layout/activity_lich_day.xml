@@ -1,46 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ThongBaoGV"
-    android:background="#F7F9FC">
+    android:orientation="vertical"
+    tools:context=".MainActivity">
 
-    <LinearLayout
+    <!-- Tiêu đề -->
+
+    <!-- Danh sách lịch học -->
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:background="#5DB5A4"
+        android:gravity="center"
+        android:padding="16dp"
+        android:text="Lịch Dạy"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
-        <!-- Toolbar with search and menu buttons -->
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#27A5DE"
-            android:elevation="4dp"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
-
-            <ImageButton
-                android:id="@+id/menu_button"
-                android:layout_width="wrap_content"
-                android:layout_height="50sp"
-                android:src="@drawable/menu"
-                android:background="?attr/selectableItemBackground"
-                android:contentDescription="Menu" />
-
-            <androidx.appcompat.widget.SearchView
-                android:id="@+id/search_view"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="20dp"
-                android:layout_marginLeft="30dp"
-                android:background="@drawable/search_background2"
-                android:queryHint="Search"
-                android:iconifiedByDefault="false" />
-        </androidx.appcompat.widget.Toolbar>
-
-    </LinearLayout>
+    <!-- RecyclerView để hiển thị danh sách lịch học -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewSchedule"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp" />
 
     <!-- Footer for Giảng Viên (GV) at bottom -->
     <LinearLayout
@@ -121,26 +110,4 @@
         </LinearLayout>
 
     </LinearLayout>
-
-    <!-- RecyclerView hiển thị danh sách thông báo -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="60dp"
-        android:layout_marginBottom="50dp"
-        android:scrollbars="vertical" />
-
-    <!-- Floating Action Button for adding notifications -->
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab_add_notification"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_marginBottom="60dp"
-        android:layout_marginRight="20dp"
-        android:contentDescription="Add Notification"
-        android:src="@drawable/nut_add"
-        app:backgroundTint="@color/design_default_color_primary" />
-
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</LinearLayout>

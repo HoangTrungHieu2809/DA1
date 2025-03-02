@@ -30,5 +30,13 @@
         android:layout_marginTop="30dp"
         android:text="Sinh Viên"
         android:textStyle="bold"/>
+    <Button
+        android:id="@+id/btn_AD"
+        android:layout_width="match_parent"
+        android:background="@drawable/chao"
+        android:layout_height="60dp"
+        android:layout_marginTop="30dp"
+        android:text="Admin"
+        android:textStyle="bold"/>
 
 </LinearLayout>

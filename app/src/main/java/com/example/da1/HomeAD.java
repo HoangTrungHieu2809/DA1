@@ -15,55 +15,49 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 
-public class Man1SV extends AppCompatActivity {
+public class HomeAD extends AppCompatActivity {
 
-    private Button btnDiemDanh, btnLichHoc, btnBaiTap, btnHoTro;
+    private Button btnQuanLiGV, btnQuanLiLop, btnQuanLiTK;
     private ImageView iconnguoi, toolbarMan1, iconLich, iconLogo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_man1_sv);
+        setContentView(R.layout.activity_home_ad);
 
-        btnDiemDanh = findViewById(R.id.btn_DiemDanh);
-        btnLichHoc = findViewById(R.id.btn_LichHoc);
-        btnBaiTap = findViewById(R.id.btn_BaiTap);
-        btnHoTro = findViewById(R.id.btn_HoTro);
+        btnQuanLiGV = findViewById(R.id.btn_QuanLiGV);
+        btnQuanLiLop = findViewById(R.id.btn_QuanLiLopHoc);
+        btnQuanLiTK = findViewById(R.id.btn_QuanLiTK);
         iconnguoi = findViewById(R.id.iconNguoi);
         toolbarMan1 = findViewById(R.id.toolbarMan1);
         iconLich = findViewById(R.id.iconLich);
         iconLogo = findViewById(R.id.iconLogo);
 
-        btnDiemDanh.setOnClickListener(v -> {
-            Intent intent = new Intent(Man1SV.this, DiemDanh1.class);
+        btnQuanLiGV.setOnClickListener(v -> {
+            Intent intent = new Intent(HomeAD.this, QuanLyGV.class);
             startActivity(intent);
         });
 
-        btnLichHoc.setOnClickListener(v -> {
-            Intent intent = new Intent(Man1SV.this, LichHoc.class);
+        btnQuanLiLop.setOnClickListener(v -> {
+            Intent intent = new Intent(HomeAD.this, LichHoc.class);
             startActivity(intent);
         });
 
-        btnHoTro.setOnClickListener(v -> {
-            Intent intent = new Intent(Man1SV.this, HoTroLienHe.class);
-            startActivity(intent);
-        });
-
-        btnBaiTap.setOnClickListener(v -> {
-            Intent intent = new Intent(Man1SV.this, BaiTap.class);
+        btnQuanLiTK.setOnClickListener(v -> {
+            Intent intent = new Intent(HomeAD.this, HoTroLienHe.class);
             startActivity(intent);
         });
 
         iconnguoi.setOnClickListener(v -> {
-            Intent intent = new Intent(Man1SV.this, ThongTinCaNhan.class);
+            Intent intent = new Intent(HomeAD.this, ThongTinCaNhan.class);
             startActivity(intent);
         });
         iconLich.setOnClickListener(v -> {
-            Intent intent = new Intent(Man1SV.this, LichHoc.class);
+            Intent intent = new Intent(HomeAD.this, LichHoc.class);
             startActivity(intent);
         });
         iconLogo.setOnClickListener(v -> {
-            Intent intent = new Intent(Man1SV.this, ThongBaoSV.class);
+            Intent intent = new Intent(HomeAD.this, ThongBaoSV.class);
             startActivity(intent);
         });
 
@@ -116,7 +110,7 @@ public class Man1SV extends AppCompatActivity {
                     // Đăng xuất khỏi Firebase
                     FirebaseAuth.getInstance().signOut();
                     // Chuyển hướng về màn hình đăng nhập
-                    Intent intent = new Intent(Man1SV.this, MainActivity.class);
+                    Intent intent = new Intent(HomeAD.this, MainActivity.class);
                     startActivity(intent);
                     finish(); // Đóng màn hình hiện tại
                 })

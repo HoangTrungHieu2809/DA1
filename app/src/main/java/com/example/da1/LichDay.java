@@ -22,9 +22,9 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LichHoc extends AppCompatActivity {
+public class LichDay extends AppCompatActivity {
     private FirebaseFirestore db;
-    ImageView navProfile, navHome, navNotifications;
+    ImageView iconHomeGV, iconLogoGV, iconNguoiGV;
     private RecyclerView recyclerView;
     private ScheduleAdapter adapter;
     private List<Schedule> scheduleList;
@@ -33,13 +33,13 @@ public class LichHoc extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_lich_hoc);
+        setContentView(R.layout.activity_lich_day);
 
 
 
-        navProfile = findViewById(R.id.navProfile);
-        navHome = findViewById(R.id.navHome);
-        navNotifications = findViewById(R.id.navNotifications);
+        iconHomeGV = findViewById(R.id.iconHomeGV);
+        iconLogoGV = findViewById(R.id.iconLogoGV);
+        iconNguoiGV = findViewById(R.id.iconNguoiGV);
 
         recyclerView = findViewById(R.id.recyclerViewSchedule);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -54,25 +54,25 @@ public class LichHoc extends AppCompatActivity {
         // Gọi hàm lấy dữ liệu
         fetchScheduleFromFirestore();
 
-        navProfile.setOnClickListener(new View.OnClickListener() {
+        iconNguoiGV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LichHoc.this, ThongTinCaNhan.class);
+                Intent intent = new Intent(LichDay.this, ThongTinCaNhanGV.class);
                 startActivity(intent);
             }
         });
 
-        navHome.setOnClickListener(new View.OnClickListener() {
+        iconHomeGV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LichHoc.this, Man1SV.class);
+                Intent intent = new Intent(LichDay.this, Man1_GV.class);
                 startActivity(intent);
             }
         });
-        navNotifications.setOnClickListener(new View.OnClickListener() {
+        iconLogoGV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LichHoc.this, ThongBaoSV.class);
+                Intent intent = new Intent(LichDay.this, ThongBaoGV.class);
                 startActivity(intent);
             }
         });

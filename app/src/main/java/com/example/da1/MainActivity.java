@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button btnGV = findViewById(R.id.btn_GV);
         Button btnSV = findViewById(R.id.btn_SV);
+        Button btnAD = findViewById(R.id.btn_AD);
 
         // Sự kiện chuyển sang màn hình Đăng nhập Giảng viên
         btnGV.setOnClickListener(new View.OnClickListener() {
@@ -36,6 +37,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, DangNhapSV.class);
+                startActivity(intent);
+            }
+        });
+        // Sự kiện chuyển sang màn hình Đăng nhập Admin
+        btnAD.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, DangNhapAD.class);
                 startActivity(intent);
             }
         });
