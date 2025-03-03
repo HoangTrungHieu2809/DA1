@@ -40,7 +40,17 @@
                 android:iconifiedByDefault="false" />
         </androidx.appcompat.widget.Toolbar>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thông báo"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            />
+
     </LinearLayout>
+
 
     <!-- Footer for Giảng Viên (GV) at bottom -->
     <LinearLayout
@@ -127,7 +137,7 @@
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="95dp"
         android:layout_marginBottom="50dp"
         android:scrollbars="vertical" />
 

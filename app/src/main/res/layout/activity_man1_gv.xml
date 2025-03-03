@@ -51,6 +51,15 @@
                 android:orientation="vertical"
                 android:padding="16dp">
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Danh sách lớp học"
+                    android:textSize="30dp"
+                    android:textStyle="bold"
+                    android:layout_gravity="center"
+                    />
+
                 <!-- Buttons for classes -->
                 <Button
                     android:id="@+id/btn_10A1"
@@ -80,59 +89,8 @@
                     android:background="@drawable/btn_background"
                     android:textColor="#FFFFFF" />
 
-                <Button
-                    android:id="@+id/btn_11A1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="11A1"
-                    android:layout_marginBottom="8dp"
-                    android:background="@drawable/btn_background"
-                    android:textColor="#FFFFFF" />
 
-                <Button
-                    android:id="@+id/btn_11A2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="11A2"
-                    android:layout_marginBottom="8dp"
-                    android:background="@drawable/btn_background"
-                    android:textColor="#FFFFFF" />
 
-                <Button
-                    android:id="@+id/btn_11A3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="11A3"
-                    android:layout_marginBottom="8dp"
-                    android:background="@drawable/btn_background"
-                    android:textColor="#FFFFFF" />
-
-                <Button
-                    android:id="@+id/btn_12A1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="12A1"
-                    android:layout_marginBottom="8dp"
-                    android:background="@drawable/btn_background"
-                    android:textColor="#FFFFFF" />
-
-                <Button
-                    android:id="@+id/btn_12A2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="12A2"
-                    android:layout_marginBottom="8dp"
-                    android:background="@drawable/btn_background"
-                    android:textColor="#FFFFFF" />
-
-                <Button
-                    android:id="@+id/btn_12A3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="12A3"
-                    android:layout_marginBottom="8dp"
-                    android:background="@drawable/btn_background"
-                    android:textColor="#FFFFFF" />
 
             </LinearLayout>
         </ScrollView>

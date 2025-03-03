@@ -29,15 +29,9 @@ public class Man1_GV extends AppCompatActivity {
         menuButton.setOnClickListener(this::showPopupMenu);
 
         // Lắng nghe sự kiện khi ấn vào các lớp
-        findViewById(R.id.btn_10A1).setOnClickListener(v -> openAddStudentScreen("10A1"));
-        findViewById(R.id.btn_10A2).setOnClickListener(v -> openAddStudentScreen("10A2"));
-        findViewById(R.id.btn_10A3).setOnClickListener(v -> openAddStudentScreen("10A3"));
-        findViewById(R.id.btn_11A1).setOnClickListener(v -> openAddStudentScreen("11A1"));
-        findViewById(R.id.btn_11A2).setOnClickListener(v -> openAddStudentScreen("11A2"));
-        findViewById(R.id.btn_11A3).setOnClickListener(v -> openAddStudentScreen("11A3"));
-        findViewById(R.id.btn_12A1).setOnClickListener(v -> openAddStudentScreen("12A1"));
-        findViewById(R.id.btn_12A2).setOnClickListener(v -> openAddStudentScreen("12A2"));
-        findViewById(R.id.btn_12A3).setOnClickListener(v -> openAddStudentScreen("12A3"));
+        findViewById(R.id.btn_10A1).setOnClickListener(v -> openClassListScreen("10A1"));
+        findViewById(R.id.btn_10A2).setOnClickListener(v -> openClassListScreen("10A2"));
+        findViewById(R.id.btn_10A3).setOnClickListener(v -> openClassListScreen("10A3"));
 
         // Lắng nghe sự kiện khi ấn vào biểu tượng "Người" (Profile)
         iconNguoiGV.setOnClickListener(v -> {
@@ -81,9 +75,9 @@ public class Man1_GV extends AppCompatActivity {
         });
     }
 
-    // Hàm mở màn hình thêm sinh viên
-    private void openAddStudentScreen(String className) {
-        Intent intent = new Intent(Man1_GV.this, AddStudent.class);
+    // Hàm mở màn hình danh sách lớp
+    private void openClassListScreen(String className) {
+        Intent intent = new Intent(Man1_GV.this, DanhSachLopActivity.class);
         intent.putExtra("class_name", className); // Truyền tên lớp
         startActivity(intent);
     }
@@ -96,8 +90,8 @@ public class Man1_GV extends AppCompatActivity {
 
         new AlertDialog.Builder(this)
                 .setTitle("Tin Tức Hôm Nay")
-                .setMessage(newsContent)  // Thông tin sự kiện trong ngày
-                .setPositiveButton("OK", (dialog, which) -> dialog.dismiss()) // Nút OK để đóng hộp thoại
+                .setMessage(newsContent)
+                .setPositiveButton("OK", (dialog, which) -> dialog.dismiss())
                 .create()
                 .show();
     }
@@ -111,7 +105,7 @@ public class Man1_GV extends AppCompatActivity {
                     FirebaseAuth.getInstance().signOut();
                     Intent intent = new Intent(Man1_GV.this, MainActivity.class);
                     startActivity(intent);
-                    finish(); // Đóng màn hình hiện tại
+                    finish();
                 })
                 .setNegativeButton("Hủy", (dialog, which) -> dialog.dismiss())
                 .create()

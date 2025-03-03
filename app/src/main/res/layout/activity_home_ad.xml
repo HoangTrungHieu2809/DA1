@@ -58,7 +58,7 @@
             android:id="@+id/btn_QuanLiLopHoc"
             android:layout_width="250dp"
             android:layout_height="50dp"
-            android:text="Quản lý giáo viên"
+            android:text="Quản lý Lớp học"
             android:textColor="#FFFFFF"
             android:layout_marginTop="10dp"
             android:background="@drawable/button_background" />

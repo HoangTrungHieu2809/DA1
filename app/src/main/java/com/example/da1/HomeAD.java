@@ -39,7 +39,7 @@ public class HomeAD extends AppCompatActivity {
         });
 
         btnQuanLiLop.setOnClickListener(v -> {
-            Intent intent = new Intent(HomeAD.this, LichHoc.class);
+            Intent intent = new Intent(HomeAD.this, DanhSachLopActivity.class);
             startActivity(intent);
         });
 
@@ -57,7 +57,7 @@ public class HomeAD extends AppCompatActivity {
             startActivity(intent);
         });
         iconLogo.setOnClickListener(v -> {
-            Intent intent = new Intent(HomeAD.this, ThongBaoSV.class);
+            Intent intent = new Intent(HomeAD.this, ThongBaoGV.class);
             startActivity(intent);
         });
 
